@@ -1,0 +1,36 @@
+{
+  "templateId": "businessImpactCanvas",
+  "metadata": {
+    "source": "",
+    "license": "",
+    "authors": [],
+    "website": "",
+    "date": "2025-04-02T21:26:50.032Z"
+  },
+  "sections": [
+    {
+      "sectionId": "availabilityRisks",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "securityRisks",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "dataRisks",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "mitigateAvailabilityRisks",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "mitigateSecurityRisks",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "mitigateDataRisks",
+      "stickyNotes": []
+    }
+  ]
+}

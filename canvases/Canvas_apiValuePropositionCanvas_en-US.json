@@ -1,0 +1,28 @@
+{
+  "templateId": "apiValuePropositionCanvas",
+  "metadata": {
+    "source": "",
+    "license": "",
+    "authors": [],
+    "website": "",
+    "date": "2025-04-02T21:26:42.266Z"
+  },
+  "sections": [
+    {
+      "sectionId": "tasks",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "gainEnablingFeatures",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "painRelievingFeatures",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "apiProducts",
+      "stickyNotes": []
+    }
+  ]
+}

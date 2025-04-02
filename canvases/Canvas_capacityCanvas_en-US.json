@@ -1,0 +1,36 @@
+{
+  "templateId": "capacityCanvas",
+  "metadata": {
+    "source": "",
+    "license": "",
+    "authors": [],
+    "website": "",
+    "date": "2025-04-02T21:26:52.741Z"
+  },
+  "sections": [
+    {
+      "sectionId": "currentBusinessVolumes",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "futureConsumptionTrends",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "peakLoadAndAvailabilityRequirements",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "cachingStrategies",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "rateLimitingStrategies",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "scalingStrategies",
+      "stickyNotes": []
+    }
+  ]
+}

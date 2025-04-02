@@ -1,0 +1,48 @@
+{
+  "templateId": "apiBusinessModelCanvas",
+  "metadata": {
+    "source": "",
+    "license": "",
+    "authors": [],
+    "website": "",
+    "date": "2025-04-02T21:26:37.178Z"
+  },
+  "sections": [
+    {
+      "sectionId": "keyPartners",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "keyActivities",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "keyResources",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "apiValueProposition",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "developerRelations",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "channels",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "apiConsumerSegments",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "costs",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "benefits",
+      "stickyNotes": []
+    }
+  ]
+}

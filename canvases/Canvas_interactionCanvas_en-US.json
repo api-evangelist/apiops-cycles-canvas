@@ -1,0 +1,60 @@
+{
+  "templateId": "interactionCanvas",
+  "metadata": {
+    "source": "",
+    "license": "",
+    "authors": [],
+    "website": "",
+    "date": "2025-04-02T21:27:02.710Z"
+  },
+  "sections": [
+    {
+      "sectionId": "crudInteractions",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "crudInputOutputModels",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "crudProcessingValidation",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "queryDrivenInteractions",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "queryDrivenInputOutputModels",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "queryDrivenProcessingValidation",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "commandDrivenInteractions",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "commandDrivenInputOutputModels",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "commandDrivenProcessingValidation",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "eventDrivenInteractions",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "eventDrivenInputOutputModels",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "eventDrivenProcessingValidation",
+      "stickyNotes": []
+    }
+  ]
+}

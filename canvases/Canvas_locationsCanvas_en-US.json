@@ -1,0 +1,44 @@
+{
+  "templateId": "locationsCanvas",
+  "metadata": {
+    "source": "",
+    "license": "",
+    "authors": [],
+    "website": "",
+    "date": "2025-04-02T21:27:06.259Z"
+  },
+  "sections": [
+    {
+      "sectionId": "locationGroups",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "locationGroupCharacteristics",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "locations",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "locationCharacteristics",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "locationDistances",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "locationDistanceCharacteristics",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "locationEndpoints",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "locationEndpointCharacteristics",
+      "stickyNotes": []
+    }
+  ]
+}

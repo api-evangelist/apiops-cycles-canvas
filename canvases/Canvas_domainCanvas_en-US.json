@@ -1,0 +1,36 @@
+{
+  "templateId": "domainCanvas",
+  "metadata": {
+    "source": "",
+    "license": "",
+    "authors": [],
+    "website": "",
+    "date": "2025-04-02T21:26:58.098Z"
+  },
+  "sections": [
+    {
+      "sectionId": "selectedCustomerJourneySteps",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "coreEntitiesAndBusinessMeaning",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "attributesAndBusinessImportance",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "relationshipsBetweenEntities",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "businessComplianceAndIntegrityRules",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "securityAndPrivacyConsiderations",
+      "stickyNotes": []
+    }
+  ]
+}

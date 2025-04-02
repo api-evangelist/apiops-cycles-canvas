@@ -1,0 +1,28 @@
+{
+  "templateId": "restCanvas",
+  "metadata": {
+    "source": "",
+    "license": "",
+    "authors": [],
+    "website": "",
+    "date": "2025-04-02T21:27:09.282Z"
+  },
+  "sections": [
+    {
+      "sectionId": "apiResources",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "apiResourceModel",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "apiVerbs",
+      "stickyNotes": []
+    },
+    {
+      "sectionId": "apiVerbExample",
+      "stickyNotes": []
+    }
+  ]
+}
