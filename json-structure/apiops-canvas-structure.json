@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-structure.org/meta/core/v0/#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apiops-cycles-canvas/main/json-structure/apiops-canvas-structure.json",
+  "title": "APIOps Canvas",
+  "description": "Structure representing an APIOps Cycles canvas for API strategy and design workshops",
+  "type": "object",
+  "properties": {
+    "templateId": {
+      "type": "string",
+      "description": "Canvas template type identifier"
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Canvas metadata",
+      "properties": {
+        "source": { "type": "string" },
+        "license": { "type": "string" },
+        "authors": { "type": "array", "items": { "type": "string" } },
+        "website": { "type": "string" },
+        "date": { "type": "datetime" }
+      }
+    },
+    "sections": {
+      "type": "array",
+      "description": "Canvas sections with sticky note content",
+      "items": {
+        "type": "object",
+        "properties": {
+          "sectionId": { "type": "string" },
+          "stickyNotes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": { "type": "string" },
+                "text": { "type": "string" },
+                "color": { "type": "string" }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

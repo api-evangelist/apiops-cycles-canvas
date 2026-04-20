@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/apiops-cycles-canvas/main/json-schema/apiops-canvas-schema.json",
+  "title": "APIOps Canvas",
+  "description": "Schema representing an APIOps Cycles canvas used for structured API strategy and design workshops",
+  "type": "object",
+  "properties": {
+    "templateId": {
+      "type": "string",
+      "description": "Identifier of the canvas template type",
+      "enum": [
+        "apiBusinessModelCanvas",
+        "apiValuePropositionCanvas",
+        "businessImpactCanvas",
+        "capacityCanvas",
+        "customerJourneyCanvas",
+        "domainCanvas",
+        "eventCanvas",
+        "interactionCanvas",
+        "locationsCanvas",
+        "restCanvas"
+      ]
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Metadata about the canvas instance",
+      "properties": {
+        "source": { "type": "string", "description": "Source or context for this canvas" },
+        "license": { "type": "string", "description": "License for the canvas content" },
+        "authors": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Authors who contributed to the canvas"
+        },
+        "website": { "type": "string", "format": "uri", "description": "Related website URL" },
+        "date": { "type": "string", "format": "date-time", "description": "Date the canvas was created or last modified" }
+      }
+    },
+    "sections": {
+      "type": "array",
+      "description": "Sections of the canvas with their sticky note content",
+      "items": {
+        "type": "object",
+        "properties": {
+          "sectionId": {
+            "type": "string",
+            "description": "Identifier of the canvas section"
+          },
+          "stickyNotes": {
+            "type": "array",
+            "description": "Sticky notes added to this section",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": { "type": "string" },
+                "text": { "type": "string" },
+                "color": { "type": "string" }
+              }
+            }
+          }
+        },
+        "required": ["sectionId"]
+      }
+    }
+  },
+  "required": ["templateId", "sections"]
+}

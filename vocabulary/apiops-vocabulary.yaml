@@ -1,0 +1,92 @@
+vocabulary:
+  name: APIOps Cycles Canvas Vocabulary
+  description: Unified taxonomy mapping APIOps canvas types, sections, and personas for structured API strategy and design workshops
+  version: 1.0.0
+  updated: '2026-04-19'
+
+resources:
+  - name: Canvas
+    description: A structured workshop canvas used for API strategy, design, or business modeling
+    properties:
+      - templateId
+      - metadata
+      - sections
+
+  - name: Section
+    description: A named section within a canvas where participants add sticky note content
+    properties:
+      - sectionId
+      - stickyNotes
+
+  - name: StickyNote
+    description: A piece of content added to a canvas section during a workshop
+    properties:
+      - id
+      - text
+      - color
+
+canvases:
+  - name: API Business Model Canvas
+    templateId: apiBusinessModelCanvas
+    url: https://www.apiopscycles.com/resources/api-business-model-canvas
+    sections:
+      - keyPartners
+      - keyActivities
+      - keyResources
+      - apiValueProposition
+      - developerRelations
+      - channels
+      - apiConsumerSegments
+      - costs
+      - benefits
+
+  - name: API Value Proposition Canvas
+    templateId: apiValuePropositionCanvas
+    url: https://www.apiopscycles.com/resources/api-value-proposition-canvas
+
+  - name: Business Impact Canvas
+    templateId: businessImpactCanvas
+    url: https://www.apiopscycles.com/resources/business-impact-canvas
+
+  - name: Capacity Canvas
+    templateId: capacityCanvas
+    url: https://www.apiopscycles.com/resources/capacity-canvas
+
+  - name: Customer Journey Canvas
+    templateId: customerJourneyCanvas
+    url: https://www.apiopscycles.com/resources/customer-journey-canvas
+
+  - name: Domain Canvas
+    templateId: domainCanvas
+    url: https://www.apiopscycles.com/resources/domain-canvas
+
+  - name: Event Canvas
+    templateId: eventCanvas
+
+  - name: Interaction Canvas
+    templateId: interactionCanvas
+    url: https://www.apiopscycles.com/resources/interaction-canvas
+
+  - name: Locations Canvas
+    templateId: locationsCanvas
+    url: https://www.apiopscycles.com/resources/locations-canvas
+
+  - name: REST Canvas
+    templateId: restCanvas
+    url: https://www.apiopscycles.com/resources/rest-api-design-guide
+
+actions:
+  - name: Design
+    description: Use canvases to structure and facilitate API design and strategy workshops
+  - name: Document
+    description: Capture workshop outcomes as structured canvas data for future reference
+  - name: Share
+    description: Share completed canvases with stakeholders for alignment and review
+
+personas:
+  - name: API Product Manager
+    description: Uses canvases to define API business models and value propositions
+  - name: API Architect
+    description: Uses domain, REST, and interaction canvases to design API structures
+  - name: API Workshop Facilitator
+    description: Facilitates APIOps workshop sessions using structured canvas templates
