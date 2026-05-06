@@ -1,0 +1,216 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Products API
+  description: This is a template APIs.json for a products API, to be used in storytelling, training, and knowledge bases.
+  tags:
+  - Apiops
+  - Cycles
+  - Canvas
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: apiops-cycles-canvas
+    baseUri: https://api.example.com
+    description: Products API HTTP API.
+    authentication:
+      type: apikey
+      in: header
+      name: api-key
+      value: '{{APIOPS_CYCLES_CANVAS_TOKEN}}'
+    resources:
+    - name: products
+      path: /products
+      operations:
+      - name: getproducts
+        method: GET
+        description: Retrieves Products
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createproduct
+        method: POST
+        description: Products Create Product
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: products-productid
+      path: /products/{productId}
+      operations:
+      - name: getproduct
+        method: GET
+        description: Products Retrieve Product
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: updateproduct
+        method: PUT
+        description: Products Update Product
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: deleteproduct
+        method: DELETE
+        description: Products Delete Product
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: products-productid-cancle
+      path: /products/{productId}/cancle
+      operations:
+      - name: sendproduct
+        method: PUT
+        description: Products Cancel Product
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: apiops-cycles-canvas-rest
+    description: REST adapter for Products API.
+    resources:
+    - path: /products
+      name: getproducts
+      operations:
+      - method: GET
+        name: getproducts
+        description: Retrieves Products
+        call: apiops-cycles-canvas.getproducts
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /products
+      name: createproduct
+      operations:
+      - method: POST
+        name: createproduct
+        description: Products Create Product
+        call: apiops-cycles-canvas.createproduct
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /products/{productId}
+      name: getproduct
+      operations:
+      - method: GET
+        name: getproduct
+        description: Products Retrieve Product
+        call: apiops-cycles-canvas.getproduct
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /products/{productId}
+      name: updateproduct
+      operations:
+      - method: PUT
+        name: updateproduct
+        description: Products Update Product
+        call: apiops-cycles-canvas.updateproduct
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /products/{productId}
+      name: deleteproduct
+      operations:
+      - method: DELETE
+        name: deleteproduct
+        description: Products Delete Product
+        call: apiops-cycles-canvas.deleteproduct
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /products/{productId}/cancle
+      name: sendproduct
+      operations:
+      - method: PUT
+        name: sendproduct
+        description: Products Cancel Product
+        call: apiops-cycles-canvas.sendproduct
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: apiops-cycles-canvas-mcp
+    transport: http
+    description: MCP adapter for Products API for AI agent use.
+    tools:
+    - name: getproducts
+      description: Retrieves Products
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: apiops-cycles-canvas.getproducts
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createproduct
+      description: Products Create Product
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: apiops-cycles-canvas.createproduct
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getproduct
+      description: Products Retrieve Product
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: apiops-cycles-canvas.getproduct
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updateproduct
+      description: Products Update Product
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: apiops-cycles-canvas.updateproduct
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deleteproduct
+      description: Products Delete Product
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: apiops-cycles-canvas.deleteproduct
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: sendproduct
+      description: Products Cancel Product
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: apiops-cycles-canvas.sendproduct
+      outputParameters:
+      - type: object
+        mapping: $.
+binds:
+- namespace: env
+  keys:
+    APIOPS_CYCLES_CANVAS_TOKEN: APIOPS_CYCLES_CANVAS_TOKEN
