@@ -45,7 +45,7 @@ common:
     url: canvases/Canvas_restCanvas_en-US.json
   - type: JSONSchema
     url: json-schema/apiops-canvas-schema.json
-  - type: JSON-LD
+  - type: JSONLD
     url: json-ld/apiops-context.jsonld
 maintainers:
   - FN: Kin Lane
