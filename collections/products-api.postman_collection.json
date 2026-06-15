@@ -1,0 +1,2907 @@
+{
+  "item": [
+    {
+      "id": "bcf93567-3f30-4f3b-a31e-4e53b98d4e5f",
+      "name": "Products",
+      "description": {
+        "content": "Placing and managing of products placed for products.\n",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ef0e33f7-e7de-4a46-8bbd-2d05f9e611f3",
+          "name": "Retrieves Products",
+          "request": {
+            "name": "Retrieves Products",
+            "description": {
+              "content": "Returns a list of all products for the authenticated user.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "products"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "09e07e5a-0553-459b-8337-5d12c90e200f",
+              "name": "A list of products",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The RateLimit header communicates quota policies. It contains a `limit` to\nconvey the expiring limit, `remaining` to convey the remaining quota units,\nand `reset` to convey the time window reset time.\n",
+                  "key": "RateLimit",
+                  "value": "limit=10, remaining=0, reset=10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"page\": 1,\n    \"pageSize\": 10,\n    \"totalPages\": 2\n  },\n  \"data\": [\n    {\n      \"id\": \"efdbb9d1-02c2-4bc3-afb7-6788d8782b1e\",\n      \"sender\": \"Jane Doe\",\n      \"recipient\": \"John Doe\",\n      \"subjectOf\": \"Meeting Later\",\n      \"text\": \"Please meet me at the market.\",\n      \"dateSent\": \"2018-04-25T18:00:30+01:00\",\n      \"dateReceived\": \"2018-04-25T18:00:30+01:00\"\n    }\n  ],\n  \"links\": {\n    \"self\": \"https://api.example.com/products\",\n    \"next\": \"https://api.example.com/products?page=2\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6c2a33e2-9b8d-4916-ae16-9b06a31dd791",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The RateLimit header communicates quota policies. It contains a `limit` to\nconvey the expiring limit, `remaining` to convey the remaining quota units,\nand `reset` to convey the time window reset time.\n",
+                  "key": "RateLimit",
+                  "value": "limit=10, remaining=0, reset=10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"https://example.com/errors/bad-request\",\n  \"title\": \"Bad Request\",\n  \"status\": 400,\n  \"detail\": \"The request is invalid or missing required parameters.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7c38866f-2a25-4913-9f8e-0ea2b77c449e",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The RateLimit header communicates quota policies. It contains a `limit` to\nconvey the expiring limit, `remaining` to convey the remaining quota units,\nand `reset` to convey the time window reset time.\n",
+                  "key": "RateLimit",
+                  "value": "limit=10, remaining=0, reset=10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"https://example.com/errors/unauthorized\",\n  \"title\": \"Unauthorized\",\n  \"status\": 401,\n  \"detail\": \"You do not have the necessary permissions.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "b33ac629-eec4-4a11-9958-12b54f8ac967",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The RateLimit header communicates quota policies. It contains a `limit` to\nconvey the expiring limit, `remaining` to convey the remaining quota units,\nand `reset` to convey the time window reset time.\n",
+                  "key": "RateLimit",
+                  "value": "limit=10, remaining=0, reset=10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"https://example.com/errors/forbidden\",\n  \"title\": \"Forbidden\",\n  \"status\": 403,\n  \"detail\": \"Access is forbidden with the provided credentials.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "13b3c8bb-3040-4b83-a5f8-f3f552255f60",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The RateLimit header communicates quota policies. It contains a `limit` to\nconvey the expiring limit, `remaining` to convey the remaining quota units,\nand `reset` to convey the time window reset time.\n",
+                  "key": "RateLimit",
+                  "value": "limit=10, remaining=0, reset=10"
+                },
+                {
+                  "disabled": false,
+                  "description": "The Retry-After header indicates how long the user agent should wait before making a follow-up request. \nThe value is in seconds and can be an integer or a date in the future. \nIf the value is an integer, it indicates the number of seconds to wait. \nIf the value is a date, it indicates the time at which the user agent should make a follow-up request. \n",
+                  "key": "Retry-After",
+                  "value": "stringstring"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"https://example.com/errors/too-many-requests\",\n  \"title\": \"Too Many Requests\",\n  \"status\": 429,\n  \"detail\": \"You have exceeded the rate limit.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "753cdc33-182b-464f-bb25-1ce284b41489",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The RateLimit header communicates quota policies. It contains a `limit` to\nconvey the expiring limit, `remaining` to convey the remaining quota units,\nand `reset` to convey the time window reset time.\n",
+                  "key": "RateLimit",
+                  "value": "limit=10, remaining=0, reset=10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"https://example.com/errors/internal-server-error\",\n  \"title\": \"Internal Server Error\",\n  \"status\": 500,\n  \"detail\": \"An unexpected error occurred.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e85cb66f-2b35-4fd6-891e-27388bc511c8",
+          "name": "Products Create Product",
+          "request": {
+            "name": "Products Create Product",
+            "description": {
+              "content": "Creating a new product for sending to a recipient.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "products"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"identifier\": \"<uuid>\",\n  \"name\": \"<integer>\",\n  \"descripton\": \"<string>\",\n  \"image\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "882d262a-4f1b-4332-827c-d02354c809ba",
+              "name": "Product Successful",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sender\": \"Jane Doe\",\n  \"recipient\": \"John Doe\",\n  \"subjectOf\": \"Meeting Later\",\n  \"text\": \"Please meet me at the market.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"page\": 1,\n    \"pageSize\": 10,\n    \"totalPages\": 2\n  },\n  \"data\": {\n    \"id\": \"efdbb9d1-02c2-4bc3-afb7-6788d8782b1e\",\n    \"sender\": \"Jane Doe\",\n    \"recipient\": \"John Doe\",\n    \"subjectOf\": \"Meeting Later\",\n    \"text\": \"Please meet me at the market.\",\n    \"dateSent\": \"2018-04-25T18:00:30+01:00\",\n    \"dateReceived\": \"2018-04-25T18:00:30+01:00\"\n  },\n  \"links\": {\n    \"self\": \"https://api.example.com/products\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6c70d062-dc0d-4a2c-9e3c-456fc88fe917",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sender\": \"Jane Doe\",\n  \"recipient\": \"John Doe\",\n  \"subjectOf\": \"Meeting Later\",\n  \"text\": \"Please meet me at the market.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The RateLimit header communicates quota policies. It contains a `limit` to\nconvey the expiring limit, `remaining` to convey the remaining quota units,\nand `reset` to convey the time window reset time.\n",
+                  "key": "RateLimit",
+                  "value": "limit=10, remaining=0, reset=10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"https://example.com/errors/bad-request\",\n  \"title\": \"Bad Request\",\n  \"status\": 400,\n  \"detail\": \"The request is invalid or missing required parameters.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0536ad74-3028-452d-b16f-546b03e59aaf",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sender\": \"Jane Doe\",\n  \"recipient\": \"John Doe\",\n  \"subjectOf\": \"Meeting Later\",\n  \"text\": \"Please meet me at the market.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The RateLimit header communicates quota policies. It contains a `limit` to\nconvey the expiring limit, `remaining` to convey the remaining quota units,\nand `reset` to convey the time window reset time.\n",
+                  "key": "RateLimit",
+                  "value": "limit=10, remaining=0, reset=10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"https://example.com/errors/unauthorized\",\n  \"title\": \"Unauthorized\",\n  \"status\": 401,\n  \"detail\": \"You do not have the necessary permissions.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "07c1075e-907c-4418-bfff-72f9231b4bc4",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sender\": \"Jane Doe\",\n  \"recipient\": \"John Doe\",\n  \"subjectOf\": \"Meeting Later\",\n  \"text\": \"Please meet me at the market.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The RateLimit header communicates quota policies. It contains a `limit` to\nconvey the expiring limit, `remaining` to convey the remaining quota units,\nand `reset` to convey the time window reset time.\n",
+                  "key": "RateLimit",
+                  "value": "limit=10, remaining=0, reset=10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"https://example.com/errors/forbidden\",\n  \"title\": \"Forbidden\",\n  \"status\": 403,\n  \"detail\": \"Access is forbidden with the provided credentials.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "87d19936-2d57-4656-ab98-4d2333921f9c",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sender\": \"Jane Doe\",\n  \"recipient\": \"John Doe\",\n  \"subjectOf\": \"Meeting Later\",\n  \"text\": \"Please meet me at the market.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The RateLimit header communicates quota policies. It contains a `limit` to\nconvey the expiring limit, `remaining` to convey the remaining quota units,\nand `reset` to convey the time window reset time.\n",
+                  "key": "RateLimit",
+                  "value": "limit=10, remaining=0, reset=10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"https://example.com/errors/not-found\",\n  \"title\": \"Not Found\",\n  \"status\": 404,\n  \"detail\": \"The requested resource was not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3c4b2561-54dd-4d3d-bb1b-2f521080b5a5",
+              "name": "Conflict",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sender\": \"Jane Doe\",\n  \"recipient\": \"John Doe\",\n  \"subjectOf\": \"Meeting Later\",\n  \"text\": \"Please meet me at the market.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The RateLimit header communicates quota policies. It contains a `limit` to\nconvey the expiring limit, `remaining` to convey the remaining quota units,\nand `reset` to convey the time window reset time.\n",
+                  "key": "RateLimit",
+                  "value": "limit=10, remaining=0, reset=10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"https://example.com/errors/conflict\",\n  \"title\": \"Conflict\",\n  \"status\": 409,\n  \"detail\": \"There is a conflict with an existing resource.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d78c481f-1096-4ace-9f90-0a31ca76addf",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sender\": \"Jane Doe\",\n  \"recipient\": \"John Doe\",\n  \"subjectOf\": \"Meeting Later\",\n  \"text\": \"Please meet me at the market.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The RateLimit header communicates quota policies. It contains a `limit` to\nconvey the expiring limit, `remaining` to convey the remaining quota units,\nand `reset` to convey the time window reset time.\n",
+                  "key": "RateLimit",
+                  "value": "limit=10, remaining=0, reset=10"
+                },
+                {
+                  "disabled": false,
+                  "description": "The Retry-After header indicates how long the user agent should wait before making a follow-up request. \nThe value is in seconds and can be an integer or a date in the future. \nIf the value is an integer, it indicates the number of seconds to wait. \nIf the value is a date, it indicates the time at which the user agent should make a follow-up request. \n",
+                  "key": "Retry-After",
+                  "value": "stringstring"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"https://example.com/errors/too-many-requests\",\n  \"title\": \"Too Many Requests\",\n  \"status\": 429,\n  \"detail\": \"You have exceeded the rate limit.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0a8872b7-cd1a-4c3b-ad1f-a74603ea37b7",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sender\": \"Jane Doe\",\n  \"recipient\": \"John Doe\",\n  \"subjectOf\": \"Meeting Later\",\n  \"text\": \"Please meet me at the market.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The RateLimit header communicates quota policies. It contains a `limit` to\nconvey the expiring limit, `remaining` to convey the remaining quota units,\nand `reset` to convey the time window reset time.\n",
+                  "key": "RateLimit",
+                  "value": "limit=10, remaining=0, reset=10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"https://example.com/errors/internal-server-error\",\n  \"title\": \"Internal Server Error\",\n  \"status\": 500,\n  \"detail\": \"An unexpected error occurred.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "4da4d152-a87e-4d1a-b302-6440a8964bd9",
+          "name": "Products Retrieve Product",
+          "request": {
+            "name": "Products Retrieve Product",
+            "description": {
+              "content": "Returns the details of a specific product.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "products",
+                ":productId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "productId",
+                  "description": "(Required) The ID of the product to retrieve."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "6651996e-8e80-4155-b78b-6e17e869f8dd",
+              "name": "Product Details",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":productId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "productId",
+                      "description": "(Required) The ID of the product to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The RateLimit header communicates quota policies. It contains a `limit` to\nconvey the expiring limit, `remaining` to convey the remaining quota units,\nand `reset` to convey the time window reset time.\n",
+                  "key": "RateLimit",
+                  "value": "limit=10, remaining=0, reset=10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"page\": 1,\n    \"pageSize\": 10,\n    \"totalPages\": 2\n  },\n  \"data\": {\n    \"id\": \"efdbb9d1-02c2-4bc3-afb7-6788d8782b1e\",\n    \"sender\": \"Jane Doe\",\n    \"recipient\": \"John Doe\",\n    \"subjectOf\": \"Meeting Later\",\n    \"text\": \"Please meet me at the market.\",\n    \"dateSent\": \"2018-04-25T18:00:30+01:00\",\n    \"dateReceived\": \"2018-04-25T18:00:30+01:00\"\n  },\n  \"links\": {\n    \"self\": \"https://api.example.com/products\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fe8952c9-2783-475b-b41a-65c9afc73dd2",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":productId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "productId",
+                      "description": "(Required) The ID of the product to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The RateLimit header communicates quota policies. It contains a `limit` to\nconvey the expiring limit, `remaining` to convey the remaining quota units,\nand `reset` to convey the time window reset time.\n",
+                  "key": "RateLimit",
+                  "value": "limit=10, remaining=0, reset=10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"https://example.com/errors/bad-request\",\n  \"title\": \"Bad Request\",\n  \"status\": 400,\n  \"detail\": \"The request is invalid or missing required parameters.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f25a9f05-16bb-421b-891f-08e163ab9363",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":productId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "productId",
+                      "description": "(Required) The ID of the product to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The RateLimit header communicates quota policies. It contains a `limit` to\nconvey the expiring limit, `remaining` to convey the remaining quota units,\nand `reset` to convey the time window reset time.\n",
+                  "key": "RateLimit",
+                  "value": "limit=10, remaining=0, reset=10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"https://example.com/errors/unauthorized\",\n  \"title\": \"Unauthorized\",\n  \"status\": 401,\n  \"detail\": \"You do not have the necessary permissions.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "99e42550-f9db-45ff-bd09-fa3a6fa54ab3",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":productId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "productId",
+                      "description": "(Required) The ID of the product to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The RateLimit header communicates quota policies. It contains a `limit` to\nconvey the expiring limit, `remaining` to convey the remaining quota units,\nand `reset` to convey the time window reset time.\n",
+                  "key": "RateLimit",
+                  "value": "limit=10, remaining=0, reset=10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"https://example.com/errors/forbidden\",\n  \"title\": \"Forbidden\",\n  \"status\": 403,\n  \"detail\": \"Access is forbidden with the provided credentials.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "494f6880-6c20-47c4-93f1-96883194ba85",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":productId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "productId",
+                      "description": "(Required) The ID of the product to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The RateLimit header communicates quota policies. It contains a `limit` to\nconvey the expiring limit, `remaining` to convey the remaining quota units,\nand `reset` to convey the time window reset time.\n",
+                  "key": "RateLimit",
+                  "value": "limit=10, remaining=0, reset=10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"https://example.com/errors/not-found\",\n  \"title\": \"Not Found\",\n  \"status\": 404,\n  \"detail\": \"The requested resource was not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "1c717205-5f6e-4ca1-8c97-55d10e58267e",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":productId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "productId",
+                      "description": "(Required) The ID of the product to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The RateLimit header communicates quota policies. It contains a `limit` to\nconvey the expiring limit, `remaining` to convey the remaining quota units,\nand `reset` to convey the time window reset time.\n",
+                  "key": "RateLimit",
+                  "value": "limit=10, remaining=0, reset=10"
+                },
+                {
+                  "disabled": false,
+                  "description": "The Retry-After header indicates how long the user agent should wait before making a follow-up request. \nThe value is in seconds and can be an integer or a date in the future. \nIf the value is an integer, it indicates the number of seconds to wait. \nIf the value is a date, it indicates the time at which the user agent should make a follow-up request. \n",
+                  "key": "Retry-After",
+                  "value": "stringstring"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"https://example.com/errors/too-many-requests\",\n  \"title\": \"Too Many Requests\",\n  \"status\": 429,\n  \"detail\": \"You have exceeded the rate limit.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "cb40dbfa-06d5-40c4-aa7b-25913f30c9ed",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":productId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "productId",
+                      "description": "(Required) The ID of the product to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The RateLimit header communicates quota policies. It contains a `limit` to\nconvey the expiring limit, `remaining` to convey the remaining quota units,\nand `reset` to convey the time window reset time.\n",
+                  "key": "RateLimit",
+                  "value": "limit=10, remaining=0, reset=10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"https://example.com/errors/internal-server-error\",\n  \"title\": \"Internal Server Error\",\n  \"status\": 500,\n  \"detail\": \"An unexpected error occurred.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9e54a38c-4228-49fb-a6fb-a23916c5f212",
+          "name": "Products Update Product",
+          "request": {
+            "name": "Products Update Product",
+            "description": {
+              "content": "Updates a single product.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "products",
+                ":productId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "productId",
+                  "description": "(Required) The ID of the product to retrieve."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/problem+json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"identifier\": \"<uuid>\",\n  \"name\": \"<integer>\",\n  \"descripton\": \"<string>\",\n  \"image\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "5d708b5c-2e67-4cfb-8041-de3f3b12dbce",
+              "name": "Product Updated",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":productId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "productId",
+                      "description": "(Required) The ID of the product to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sender\": \"Jane Doe\",\n  \"recipient\": \"John Doe\",\n  \"subjectOf\": \"Meeting Later\",\n  \"text\": \"Please meet me at the market.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "eaac1185-180c-4771-a7e6-f58194e5040d",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":productId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "productId",
+                      "description": "(Required) The ID of the product to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sender\": \"Jane Doe\",\n  \"recipient\": \"John Doe\",\n  \"subjectOf\": \"Meeting Later\",\n  \"text\": \"Please meet me at the market.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The RateLimit header communicates quota policies. It contains a `limit` to\nconvey the expiring limit, `remaining` to convey the remaining quota units,\nand `reset` to convey the time window reset time.\n",
+                  "key": "RateLimit",
+                  "value": "limit=10, remaining=0, reset=10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"https://example.com/errors/bad-request\",\n  \"title\": \"Bad Request\",\n  \"status\": 400,\n  \"detail\": \"The request is invalid or missing required parameters.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "f237f091-468f-44ae-a899-2ebc29277518",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":productId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "productId",
+                      "description": "(Required) The ID of the product to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sender\": \"Jane Doe\",\n  \"recipient\": \"John Doe\",\n  \"subjectOf\": \"Meeting Later\",\n  \"text\": \"Please meet me at the market.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The RateLimit header communicates quota policies. It contains a `limit` to\nconvey the expiring limit, `remaining` to convey the remaining quota units,\nand `reset` to convey the time window reset time.\n",
+                  "key": "RateLimit",
+                  "value": "limit=10, remaining=0, reset=10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"https://example.com/errors/unauthorized\",\n  \"title\": \"Unauthorized\",\n  \"status\": 401,\n  \"detail\": \"You do not have the necessary permissions.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d062a19e-36b5-4273-a7b2-7125b4b98b1f",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":productId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "productId",
+                      "description": "(Required) The ID of the product to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sender\": \"Jane Doe\",\n  \"recipient\": \"John Doe\",\n  \"subjectOf\": \"Meeting Later\",\n  \"text\": \"Please meet me at the market.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The RateLimit header communicates quota policies. It contains a `limit` to\nconvey the expiring limit, `remaining` to convey the remaining quota units,\nand `reset` to convey the time window reset time.\n",
+                  "key": "RateLimit",
+                  "value": "limit=10, remaining=0, reset=10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"https://example.com/errors/forbidden\",\n  \"title\": \"Forbidden\",\n  \"status\": 403,\n  \"detail\": \"Access is forbidden with the provided credentials.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6e6c3f95-7b3c-4814-8c4a-108073a2d3eb",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":productId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "productId",
+                      "description": "(Required) The ID of the product to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sender\": \"Jane Doe\",\n  \"recipient\": \"John Doe\",\n  \"subjectOf\": \"Meeting Later\",\n  \"text\": \"Please meet me at the market.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The RateLimit header communicates quota policies. It contains a `limit` to\nconvey the expiring limit, `remaining` to convey the remaining quota units,\nand `reset` to convey the time window reset time.\n",
+                  "key": "RateLimit",
+                  "value": "limit=10, remaining=0, reset=10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"https://example.com/errors/not-found\",\n  \"title\": \"Not Found\",\n  \"status\": 404,\n  \"detail\": \"The requested resource was not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "e3c659f2-ca47-4f16-869d-b1b2697b4e08",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":productId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "productId",
+                      "description": "(Required) The ID of the product to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sender\": \"Jane Doe\",\n  \"recipient\": \"John Doe\",\n  \"subjectOf\": \"Meeting Later\",\n  \"text\": \"Please meet me at the market.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The RateLimit header communicates quota policies. It contains a `limit` to\nconvey the expiring limit, `remaining` to convey the remaining quota units,\nand `reset` to convey the time window reset time.\n",
+                  "key": "RateLimit",
+                  "value": "limit=10, remaining=0, reset=10"
+                },
+                {
+                  "disabled": false,
+                  "description": "The Retry-After header indicates how long the user agent should wait before making a follow-up request. \nThe value is in seconds and can be an integer or a date in the future. \nIf the value is an integer, it indicates the number of seconds to wait. \nIf the value is a date, it indicates the time at which the user agent should make a follow-up request. \n",
+                  "key": "Retry-After",
+                  "value": "stringstring"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"https://example.com/errors/too-many-requests\",\n  \"title\": \"Too Many Requests\",\n  \"status\": 429,\n  \"detail\": \"You have exceeded the rate limit.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "50a001fe-f946-48ad-b0a6-035a28d6094e",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":productId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "productId",
+                      "description": "(Required) The ID of the product to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sender\": \"Jane Doe\",\n  \"recipient\": \"John Doe\",\n  \"subjectOf\": \"Meeting Later\",\n  \"text\": \"Please meet me at the market.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The RateLimit header communicates quota policies. It contains a `limit` to\nconvey the expiring limit, `remaining` to convey the remaining quota units,\nand `reset` to convey the time window reset time.\n",
+                  "key": "RateLimit",
+                  "value": "limit=10, remaining=0, reset=10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"https://example.com/errors/internal-server-error\",\n  \"title\": \"Internal Server Error\",\n  \"status\": 500,\n  \"detail\": \"An unexpected error occurred.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e3f57a9e-8e46-44ec-9722-f46c24cc65e6",
+          "name": "Products Delete Product",
+          "request": {
+            "name": "Products Delete Product",
+            "description": {
+              "content": "Deletes a product.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "products",
+                ":productId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "productId",
+                  "description": "(Required) The ID of the product to retrieve."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/problem+json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "37275127-24cf-4166-8ee1-057f47f80741",
+              "name": "Product Deleted",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":productId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "productId",
+                      "description": "(Required) The ID of the product to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "f43dfbb8-9323-4884-8bde-61d938e34b5d",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":productId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "productId",
+                      "description": "(Required) The ID of the product to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The RateLimit header communicates quota policies. It contains a `limit` to\nconvey the expiring limit, `remaining` to convey the remaining quota units,\nand `reset` to convey the time window reset time.\n",
+                  "key": "RateLimit",
+                  "value": "limit=10, remaining=0, reset=10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"https://example.com/errors/bad-request\",\n  \"title\": \"Bad Request\",\n  \"status\": 400,\n  \"detail\": \"The request is invalid or missing required parameters.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "95e4a93a-956f-4d18-9590-f5d9ce8ce4a4",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":productId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "productId",
+                      "description": "(Required) The ID of the product to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The RateLimit header communicates quota policies. It contains a `limit` to\nconvey the expiring limit, `remaining` to convey the remaining quota units,\nand `reset` to convey the time window reset time.\n",
+                  "key": "RateLimit",
+                  "value": "limit=10, remaining=0, reset=10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"https://example.com/errors/unauthorized\",\n  \"title\": \"Unauthorized\",\n  \"status\": 401,\n  \"detail\": \"You do not have the necessary permissions.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bcf6ecf3-ae90-4116-9b8e-39050473b32f",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":productId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "productId",
+                      "description": "(Required) The ID of the product to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The RateLimit header communicates quota policies. It contains a `limit` to\nconvey the expiring limit, `remaining` to convey the remaining quota units,\nand `reset` to convey the time window reset time.\n",
+                  "key": "RateLimit",
+                  "value": "limit=10, remaining=0, reset=10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"https://example.com/errors/forbidden\",\n  \"title\": \"Forbidden\",\n  \"status\": 403,\n  \"detail\": \"Access is forbidden with the provided credentials.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ae97f081-3fdf-4937-a903-53ed2b246159",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":productId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "productId",
+                      "description": "(Required) The ID of the product to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The RateLimit header communicates quota policies. It contains a `limit` to\nconvey the expiring limit, `remaining` to convey the remaining quota units,\nand `reset` to convey the time window reset time.\n",
+                  "key": "RateLimit",
+                  "value": "limit=10, remaining=0, reset=10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"https://example.com/errors/not-found\",\n  \"title\": \"Not Found\",\n  \"status\": 404,\n  \"detail\": \"The requested resource was not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "63c830ad-4ac4-4faf-a037-f8ce0e3daa09",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":productId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "productId",
+                      "description": "(Required) The ID of the product to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The RateLimit header communicates quota policies. It contains a `limit` to\nconvey the expiring limit, `remaining` to convey the remaining quota units,\nand `reset` to convey the time window reset time.\n",
+                  "key": "RateLimit",
+                  "value": "limit=10, remaining=0, reset=10"
+                },
+                {
+                  "disabled": false,
+                  "description": "The Retry-After header indicates how long the user agent should wait before making a follow-up request. \nThe value is in seconds and can be an integer or a date in the future. \nIf the value is an integer, it indicates the number of seconds to wait. \nIf the value is a date, it indicates the time at which the user agent should make a follow-up request. \n",
+                  "key": "Retry-After",
+                  "value": "stringstring"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"https://example.com/errors/too-many-requests\",\n  \"title\": \"Too Many Requests\",\n  \"status\": 429,\n  \"detail\": \"You have exceeded the rate limit.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "45430e63-7959-4fac-bcf5-6ef7b28ccd35",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":productId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "productId",
+                      "description": "(Required) The ID of the product to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The RateLimit header communicates quota policies. It contains a `limit` to\nconvey the expiring limit, `remaining` to convey the remaining quota units,\nand `reset` to convey the time window reset time.\n",
+                  "key": "RateLimit",
+                  "value": "limit=10, remaining=0, reset=10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"https://example.com/errors/internal-server-error\",\n  \"title\": \"Internal Server Error\",\n  \"status\": 500,\n  \"detail\": \"An unexpected error occurred.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d637ee41-b1cd-47e9-bdd4-2dc37607ad41",
+          "name": "Products Cancel Product",
+          "request": {
+            "name": "Products Cancel Product",
+            "description": {
+              "content": "Cancels a single product.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "products",
+                ":productId",
+                "cancle"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<uuid>",
+                  "key": "productId",
+                  "description": "(Required) The ID of the product to retrieve."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/problem+json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"identifier\": \"<uuid>\",\n  \"name\": \"<integer>\",\n  \"descripton\": \"<string>\",\n  \"image\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4cd01e0f-aa0b-4b21-bfa6-0f7750feedc2",
+              "name": "Product Sent",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":productId",
+                    "cancle"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "productId",
+                      "description": "(Required) The ID of the product to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sender\": \"Jane Doe\",\n  \"recipient\": \"John Doe\",\n  \"subjectOf\": \"Meeting Later\",\n  \"text\": \"Please meet me at the market.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "d8f60e05-bacc-4e33-918e-176359c37e91",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":productId",
+                    "cancle"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "productId",
+                      "description": "(Required) The ID of the product to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sender\": \"Jane Doe\",\n  \"recipient\": \"John Doe\",\n  \"subjectOf\": \"Meeting Later\",\n  \"text\": \"Please meet me at the market.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The RateLimit header communicates quota policies. It contains a `limit` to\nconvey the expiring limit, `remaining` to convey the remaining quota units,\nand `reset` to convey the time window reset time.\n",
+                  "key": "RateLimit",
+                  "value": "limit=10, remaining=0, reset=10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"https://example.com/errors/bad-request\",\n  \"title\": \"Bad Request\",\n  \"status\": 400,\n  \"detail\": \"The request is invalid or missing required parameters.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "54947f0e-a348-4c09-a378-81545b677fbb",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":productId",
+                    "cancle"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "productId",
+                      "description": "(Required) The ID of the product to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sender\": \"Jane Doe\",\n  \"recipient\": \"John Doe\",\n  \"subjectOf\": \"Meeting Later\",\n  \"text\": \"Please meet me at the market.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The RateLimit header communicates quota policies. It contains a `limit` to\nconvey the expiring limit, `remaining` to convey the remaining quota units,\nand `reset` to convey the time window reset time.\n",
+                  "key": "RateLimit",
+                  "value": "limit=10, remaining=0, reset=10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"https://example.com/errors/unauthorized\",\n  \"title\": \"Unauthorized\",\n  \"status\": 401,\n  \"detail\": \"You do not have the necessary permissions.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "55fd5006-71b2-42ee-82d2-537b8df5f89c",
+              "name": "Forbidden",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":productId",
+                    "cancle"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "productId",
+                      "description": "(Required) The ID of the product to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sender\": \"Jane Doe\",\n  \"recipient\": \"John Doe\",\n  \"subjectOf\": \"Meeting Later\",\n  \"text\": \"Please meet me at the market.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Forbidden",
+              "code": 403,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The RateLimit header communicates quota policies. It contains a `limit` to\nconvey the expiring limit, `remaining` to convey the remaining quota units,\nand `reset` to convey the time window reset time.\n",
+                  "key": "RateLimit",
+                  "value": "limit=10, remaining=0, reset=10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"https://example.com/errors/forbidden\",\n  \"title\": \"Forbidden\",\n  \"status\": 403,\n  \"detail\": \"Access is forbidden with the provided credentials.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "75c114e5-1fce-498e-846a-e358d24063fd",
+              "name": "Not Found",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":productId",
+                    "cancle"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "productId",
+                      "description": "(Required) The ID of the product to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sender\": \"Jane Doe\",\n  \"recipient\": \"John Doe\",\n  \"subjectOf\": \"Meeting Later\",\n  \"text\": \"Please meet me at the market.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The RateLimit header communicates quota policies. It contains a `limit` to\nconvey the expiring limit, `remaining` to convey the remaining quota units,\nand `reset` to convey the time window reset time.\n",
+                  "key": "RateLimit",
+                  "value": "limit=10, remaining=0, reset=10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"https://example.com/errors/not-found\",\n  \"title\": \"Not Found\",\n  \"status\": 404,\n  \"detail\": \"The requested resource was not found.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "46847ef3-ad2a-4fae-8096-6fa4bb332752",
+              "name": "Too Many Requests",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":productId",
+                    "cancle"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "productId",
+                      "description": "(Required) The ID of the product to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sender\": \"Jane Doe\",\n  \"recipient\": \"John Doe\",\n  \"subjectOf\": \"Meeting Later\",\n  \"text\": \"Please meet me at the market.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The RateLimit header communicates quota policies. It contains a `limit` to\nconvey the expiring limit, `remaining` to convey the remaining quota units,\nand `reset` to convey the time window reset time.\n",
+                  "key": "RateLimit",
+                  "value": "limit=10, remaining=0, reset=10"
+                },
+                {
+                  "disabled": false,
+                  "description": "The Retry-After header indicates how long the user agent should wait before making a follow-up request. \nThe value is in seconds and can be an integer or a date in the future. \nIf the value is an integer, it indicates the number of seconds to wait. \nIf the value is a date, it indicates the time at which the user agent should make a follow-up request. \n",
+                  "key": "Retry-After",
+                  "value": "stringstring"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"https://example.com/errors/too-many-requests\",\n  \"title\": \"Too Many Requests\",\n  \"status\": 429,\n  \"detail\": \"You have exceeded the rate limit.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7193b3e5-75b5-4224-966e-96f4bb1e88fb",
+              "name": "Internal Server Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "products",
+                    ":productId",
+                    "cancle"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<uuid>",
+                      "key": "productId",
+                      "description": "(Required) The ID of the product to retrieve."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/problem+json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"sender\": \"Jane Doe\",\n  \"recipient\": \"John Doe\",\n  \"subjectOf\": \"Meeting Later\",\n  \"text\": \"Please meet me at the market.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "disabled": false,
+                  "description": "The RateLimit header communicates quota policies. It contains a `limit` to\nconvey the expiring limit, `remaining` to convey the remaining quota units,\nand `reset` to convey the time window reset time.\n",
+                  "key": "RateLimit",
+                  "value": "limit=10, remaining=0, reset=10"
+                },
+                {
+                  "key": "Content-Type",
+                  "value": "application/problem+json"
+                }
+              ],
+              "body": "{\n  \"type\": \"https://example.com/errors/internal-server-error\",\n  \"title\": \"Internal Server Error\",\n  \"status\": 500,\n  \"detail\": \"An unexpected error occurred.\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.example.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b4d9d36f-1ba7-4edc-9fc7-7424cff770cd",
+    "name": "Products API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "This is a template APIs.json for a products API, to be used in storytelling, training, and knowledge bases.\n\n\nContact Support:\n Name: API Evangelist\n Email: info@apievangelist.com",
+      "type": "text/plain"
+    }
+  }
+}
