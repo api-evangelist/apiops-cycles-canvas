@@ -5,7 +5,7 @@ description: APIOps Cycles Canvases are structured workshop tools for API strate
   design, event modeling, interaction design, location analysis, and REST API design, enabling teams to collaborate and align
   on API decisions using visual canvas methodologies.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - API Design
   - API Strategy
