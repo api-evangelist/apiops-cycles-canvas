@@ -17,6 +17,10 @@ created: '2024-12-29'
 modified: '2026-05-19'
 specificationVersion: '0.19'
 common:
+  - type: DomainSecurity
+    url: security/apiops-cycles-canvas-domain-security.yml
+  - type: Authentication
+    url: authentication/apiops-cycles-canvas-authentication.yml
   - type: GitHubOrganization
     url: https://github.com/APIOpsCycles
   - type: Website
