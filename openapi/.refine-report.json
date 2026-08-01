@@ -1,0 +1,14 @@
+{
+  "provider": "apiops-cycles-canvas",
+  "sources": [
+    "apiops-cycles-canvas-products-api-openapi.yml"
+  ],
+  "outputs": [
+    "apiops-cycles-canvas-products-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
