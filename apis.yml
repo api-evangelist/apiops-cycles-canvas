@@ -28,7 +28,7 @@ tags:
 url: https://raw.githubusercontent.com/api-evangelist/apiops-cycles-canvas/refs/heads/main/apis.yml
 created: '2024-12-29'
 modified: '2026-05-19'
-specificationVersion: '0.19'
+specificationVersion: '0.23'
 apis:
 - aid: apiops-cycles-canvas:apiops-cycles-canvas-products-api
   name: APIOps Cycles Canvas Products API
