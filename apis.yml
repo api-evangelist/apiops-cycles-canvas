@@ -34,6 +34,8 @@ apis:
   name: APIOps Cycles Canvas Products API
   description: Placing and managing of products placed for products.
   tags:
+  - Product
+  tags_raw:
   - Products
   properties:
   - type: OpenAPI
