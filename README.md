@@ -1,4 +1,4 @@
-# APIOps Cycles Canvas (apiops-cycles-canvas)
+# APIOps Cycles Canvas
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,43 +66,144 @@
 
 APIOps Cycles Canvases are structured workshop tools for API strategy, design, and business modeling. The collection includes 10 canvas types covering API business models, value propositions, capacity planning, customer journeys, domain design, event modeling, interaction design, location analysis, and REST API design, enabling teams to collaborate and align on API decisions using visual canvas methodologies.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/apiops-cycles-canvas/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/apiops-cycles-canvas/refs/heads/main/apis.yml)
+**Areas:** API Design · API Strategy · Business Model · Canvas · Developer Tools · Workshops
 
-## Scope
+## APIOps Cycles Canvas on APIs.io
 
-- **Type:** Index
+Everything profiled for APIOps Cycles Canvas is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/apiops-cycles-canvas/](https://apis.io/providers/apiops-cycles-canvas/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (1)
 
-- API Design
-- API Strategy
-- Business Model
-- Canvas
-- Workshop
+- [APIOps Cycles Canvas Products API](https://apis.io/apis/apiops-cycles-canvas/apiops-cycles-canvas-products-api/) — Placing and managing of products placed for products.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2024-12-29
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## Common Properties
+#### Agentic access (1)
 
-- [GitHub Organization](https://github.com/APIOpsCycles)
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Apiops Cycles Canvas Agentic Access](https://apis.io/agentic-access/apiops-cycles-canvas/apiops-cycles-canvas-agentic-access/)
+
+#### JSON Schema (1)
+
+The data models the API reads and writes.
+
+- [APIOps Canvas](https://apis.io/schemas/apiops-cycles-canvas/apiops-canvas/)
+
+#### JSON Structure (1)
+
+Data models expressed in JSON Structure.
+
+- [Apiops Canvas Structure](https://apis.io/json-structure/apiops-cycles-canvas/apiops-canvas-structure/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Apiops Context](https://apis.io/jsonld/apiops-cycles-canvas/apiops-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [APIOps Cycles Canvas Vocabulary](https://apis.io/vocabularies/apiops-cycles-canvas/apiops-vocabulary/)
+
+#### Collections (2)
+
+Postman and Open Collection request collections.
+
+- [Products API](https://apis.io/collections/apiops-cycles-canvas/open-apiops-cycles-canvas-products-api/)
+- [Products API](https://apis.io/collections/apiops-cycles-canvas/open-products-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [APIOps Cycles Canvas — jsonschema rules](https://apis.io/rules/apiops-cycles-canvas/apiops-cycles-canvas-jsonschema-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Apiops Cycles Canvas Authentication](https://apis.io/security/apiops-cycles-canvas/apiops-cycles-canvas-authentication/)
+- [Apiops Cycles Canvas Domain Security](https://apis.io/security/apiops-cycles-canvas/apiops-cycles-canvas-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Apiops Cycles Canvas Plans Pricing](https://apis.io/plans/apiops-cycles-canvas/apiops-cycles-canvas-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Apiops Cycles Canvas Rate Limits](https://apis.io/rate-limits/apiops-cycles-canvas/apiops-cycles-canvas-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Apiops Cycles Canvas Finops](https://apis.io/finops/apiops-cycles-canvas/apiops-cycles-canvas-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.apiopscycles.com/)
-- [A P I Ops Business Model Canvas](canvases/Canvas_apiBusinessModelCanvas_en-US.json)
-- [A P I Ops Value Proposition Canvas](canvases/Canvas_apiValuePropositionCanvas_en-US.json)
-- [A P I Ops Business Impact Canvas](canvases/Canvas_businessImpactCanvas_en-US.json)
-- [A P I Ops Capacity Canvas](canvases/Canvas_capacityCanvas_en-US.json)
-- [A P I Ops Customer Journey Canvas](canvases/Canvas_customerJourneyCanvas_en-US.json)
-- [A P I Ops Domain Canvas](canvases/Canvas_domainCanvas_en-US.json)
-- [A P I Ops Event Canvas](canvases/Canvas_eventCanvas_en-US.json)
-- [A P I Ops Interaction Canvas](canvases/Canvas_interactionCanvas_en-US.json)
-- [A P I Ops Locations Canvas](canvases/Canvas_locationsCanvas_en-US.json)
-- [A P I Ops Rest Canvas](canvases/Canvas_restCanvas_en-US.json)
-- [JSON Schema](json-schema/apiops-canvas-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON-LD](json-ld/apiops-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
+- [GitHub](https://github.com/APIOpsCycles)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** info@apievangelist.com
+**Kin Score 25.3** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 48.2 |
+| Contract quality | 61.1 |
+| Contract governance | 9.8 |
+| Operational transparency | 7.9 |
+| Developer ergonomics | 11.9 |
+| Access clarity | 5.3 |
+
+**Agent readiness 29.1** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | verified |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 16.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/apiops-cycles-canvas/](https://apis.io/providers/apiops-cycles-canvas/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for APIOps Cycles Canvas: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/apiops-cycles-canvas/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
